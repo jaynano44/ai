@@ -20,8 +20,26 @@ Numpy패키지의 함수와 속성
   np.random.randn(n) : 표준정규분포의 1차원 난수 배열(난수 n개)
   np.arange(from,to,by,dtype)
 
-- 차원변경
+- 배열차원변경
   reshape() : -1 사용하면 자동계산
   resize()   : -1불가
   T,ttranspose() : 전치행렬
   rave(), flatten() : 1차원 변경
+
+- 배열연산
+  요소별 연산, 행렬곱(@dot, 단위행렬np.eye),집계함수(sum,min,max,mean,var,std)
+  범용함수)np.add, np.multiply,...), 브로드캐스팅
+
+-배열 합치기
+  np.vstack(tup)
+  np.hstack(tup)
+  np.dstack(tup) : 열끼리 합침
+
+  np.column_stack(tup) : 1차원 배열을 열단위로 2차원 배열로 합침
+  np.rpw_stack(tup) : 행단위로 합침
+  stack(tup, axis) : 
+  r_[a,b,c]    row단위로 쌓음 ( 한행으로 합치기 )
+  c_[a,b,c]    column으로 쌓아서 합치기( 1차원을 2차원으로 )
+  1차원배열[:,np.newaxis] == 1차원배열.reshape(-1,1) == np.expand_dims(a, axis=1) 1차원 배열을 2차원 열벡터로
+
+- 배열 분리하기

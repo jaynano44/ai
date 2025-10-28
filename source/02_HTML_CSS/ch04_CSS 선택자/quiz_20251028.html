@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        #wrap{
+            width:1000px;
+            margin:0 auto;
+            /*border:1px solid #080808;*/               /* 체크용*/
+            
+        }
+        #header{
+            overflow:hidden;
+            height:150px;
+           
+        }
+        #header .left {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #bbbbbb;
+            border-radius: 20px 0 20px 0;
+            background-color: #999999;
+        }
+        #header .center {
+            float: left;
+            width: 693px;
+            height: 150px;
+            border: 1px solid #bbbbbb;
+            border-radius: 0 0 20px 20px;
+            background-color: #999999;
+        }
+        #header .right {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #bbbbbb;
+            border-radius: 0px 20px 0px 20px;
+            background-color: #999999;
+        }
+
+        #content{
+            height:300px;
+            width:1000px;
+            overflow:hidden;
+        }
+        #content .left {
+            float:left;
+            width: 150px;
+            height:300px;
+            border: 1px solid #bbbbbb;
+            border-radius: 0px 20px 20px 0px;
+            background-color: #999999;
+        }
+        #content .center {
+            float:left;
+            width: 693px;
+            height:300px;
+            border: 1px solid #bbbbbb;
+            border-radius: 20px 20px 20px 20px;
+            background-color: #999999;
+        }
+        #content .center ul{
+            overflow:hidden;
+            text-align:center;
+        }
+        #content .center ul li {
+            float:left;
+            width:33%;
+            list-style:none;
+            font-size:24px;
+            font-weight:bold;
+        }
+        #content .center a {
+            text-decoration: none;
+            color:black;
+        }
+        #content .center h2 {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        #content .center p {
+            width: 650px;
+            text-align: justify;
+            margin: 0 auto;
+        }
+        #content .right {
+            float: left;
+            width: 150px;
+            height: 300px;
+            border: 1px solid #bbbbbb;
+            border-radius: 20px 0px 0px 20px;
+            background-color: #999999;
+            font-size:0.9em;
+        }
+        #content .right a {
+            text-decoration: none;
+            color: black;
+        }
+        #content .right li:nth-last-child(-n+3) {
+            color: red;
+        }
+        #content .right li:nth-last-child(-n+3) a{
+            color:red;
+        }
+        #footer {
+            overflow: hidden;
+            width: 1000px;
+            height: 150px;
+        }
+
+        #footer .left {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #bbbbbb;
+            border-radius: 0px 20px 0px 20px;
+            background-color: #999999;
+        }
+
+        #footer .center {
+            float: left;
+            width: 693px;
+            height: 150px;
+            border: 1px solid #bbbbbb;
+            border-radius: 20px 20px 0 0;
+            background-color: #999999;
+        }
+
+        #footer .right {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #bbbbbb;
+            border-radius: 20px 0px 20px 0;
+            background-color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+        <div id="content">
+            <div class="left"></div>
+            <div class="center">
+                <div id="nav">
+                    <ul>
+                        <li><a href="#">menu1</a></li>
+                        <li><a href="#">menu2</a></li>
+                        <li><a href="#">menu3</a></li>
+                    </ul>
+                </div>
+                <h2>AI 개발자 양성과정</h2>
+                <p>그들을 위하여서는, 들어 인생을 사막이다.커다랗고 대고 타오르고 무엇을 트고,풍부하게 그리하였는가? 보내는 힘차게 위하여 넣는 것이다.</p>
+            </div>
+            <div class="right">
+                <ol>
+                    <li><a href="#">태그</a></li>
+                    <li><a href="#">전체(*)</a></li>
+                    <li><a href="#">id,class</a></li>
+                    <li><a href="#">속성</a></li>
+                    <li><a href="#">후손,자손(+)</a></li>
+                    <li><a href="#">동위</a></li>
+                    <li><a href="#">반응</a></li>
+                    <li><a href="#">상태</a></li>
+                    <li><a href="#">구조</a></li>
+                    <li><a href="#">문자</a></li>
+                    <li><a href="#">링크</a></li>
+                    <li><a href="#">부정</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div#wrap{
+            width:600px;margin:0 auto;
+        }
+        /* .logo와 .title 수평으로*/
+        #wrap > #header{ /* 자손선택자 */
+            overflow:hidden;
+        }
+        #wrap .logo{
+            float:left;
+            padding:10px 30px 10px 150px;
+        }
+        #wrap .title{
+            float:left;
+            padding:20px 150px 10px 30px;
+        }
+        div p{/* 후선선택자 div 밑의  p (자손, 후손 모두 포함) */
+              font-size:25px;
+        }
+        div>p{/* 자손선택자 div 바로 밑의 p(자손만)*/
+               color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo">
+                <h1>LOGO</h1>
+            </div>
+            <div class="title">
+                <h2>OO 주식회사</h2>
+            </div>
+        </div>
+        <div id="content">
+            <p>대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+            <ul>
+                <li>
+                    <p>각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 </p>
+                </li>
+                <li>
+                    <p>각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 .</p>
+                </li>
+            </ul>
+        </div>
+        <div id="footer">
+            <p>서울시 관악구 신림동</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="웹서비스개발.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <nav>
+            <div id="nav_left">
+                <ul>
+                    <li>LOGO</li>
+                    <li>참여하기</li>
+                    <li>개설하기</li>
+                    <li>검색하기</li>
+                </ul>
+            </div>
+            <div id="nav_right">
+                <ul>
+                    <li>고객센터</li>
+                    <li>로그아웃</li>
+                    <li>홍길동님</li>   
+                </ul>
+            </div>
+        </nav>
+        <div id="content">
+            <div id="title">마이페이지</div>
+            <div id="lnb">
+                <ul>
+                    <li>나의여행</li>
+                    <li>참여여행</li>
+                    <li>관심여행</li>
+                    <li>개인정보변경</li>
+                    <li>비밀번호변경</li>
+                </ul>
+            </div>
+            <div id="my_content">
+                <div id="sub_title">개인정보변경</div>
+                <form action="#" method="post"> 
+                    <div id="modify">
+                        <table>
+                            <tr>
+                                <td><label for="user_name">이름</label></td>
+                                <td><input type="text" id="user_name" name="name" size="10"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="user_id">아이디</label></td>
+                                <td><input type="text" id="user_id" name="id" size="10" /></td>
+                            </tr>
+                            <tr>
+                                <td><label for="user_email">이메일</label></td>
+                                <td><input type="email" id="user_email" name="email" size="10"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="user_tel">전화</label></td>
+                                <td><input type="text" id="user_tel" name="tel"
+                                            required
+                                            pattern="\d{2,3}-?\d{3,4}-?\d{4}"
+                                            title="전화번호 형식이 아닙니다." ></td>
+                            </tr>
+                            <tr>
+                                <td><label for="user_birth">생년월일</label></td>
+                                <td><input type="text" id="user_birth" name="birth"></td> 
+                            </tr>
+                            <tr>
+                                <td><label for="user_address">주소</label></td>
+                                <td><input type="text" id="user_address" name="address"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 저장버튼 -->
+                    <div class="submit-button-area">
+                        <input type="submit" value="저장" />
+                    </div>
+                </form>
+            </div>    
+        </div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

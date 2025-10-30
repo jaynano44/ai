@@ -16,3 +16,134 @@ a{
     text-decoration: none;color: black;display: block;
 }
 li{list-style: none;}
+/***   header ***/
+header{
+    width: 100%;
+}
+/***   header .gnb ***/
+header .gnb{
+    background-color: black;
+}
+header .gnb a{
+    color: #fff;
+}
+header .gnb ul{
+    width: 1000px;height: 30px;
+    margin: 0 auto;
+    line-height: 30px;
+    overflow: hidden;
+}
+header .gnb ul li{
+    float: left;
+    width: 90px;
+    margin: 0 5px;
+    text-align: center;
+    /* border: 1px solid red;
+    box-sizing: border-box; */
+}
+/***   header .logo ***/
+header .logo{
+    font-family: "Pacifico", cursive;
+    width: 200px;margin: 30px auto;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 10px;
+    font-size: 2em;
+}
+/***   header.hitmenu ***/
+header .hitmenu ul{
+    width: 1000px;
+    margin: 0 auto 5px; /* 0 auto 5px 0*/
+    overflow: hidden;
+}
+header .hitmenu ul li{
+    float: right;
+    border: 1px solid black;
+}
+header .hitmenu ul li a{
+    /* padding: 10px 30px; */
+    width: 100px;line-height: 40px;
+    text-align: center;
+}
+header .hitmenu ul li:first-child{
+    border-radius: 0 10px 10px 0;
+}
+header .hitmenu ul li:last-child{
+    border-radius: 10px 0 0 10px ;
+}
+/***   header.inb ***/
+header .lnb{
+    border-top: 1px dashed #555;
+    border-bottom: 1px dashed #555;
+}
+header .lnb ul{
+    overflow: hidden;
+    width: 1000px;
+    margin: 0 auto;
+    line-height: 30px; 
+}
+header .lnb ul li{
+    float: left;
+    width: 115px;
+    margin: 0 5px ;
+    text-align: center;
+}
+/*******    content   *********/
+#content{
+    width: 1000px;margin: 0 auto;
+}
+/*******    content .section1   *********/
+#content .section1{
+    overflow: hidden;
+}
+#content .section1 >div{
+    float: left;
+    border:1px solid gray;
+    box-sizing: border-box;
+    text-align: center;
+    line-height:400px ;
+}
+#content .section1 .slide_banner{
+    width: 700px
+}
+#content .section1 .side_banner{
+    width: 300px;
+}
+/*******    content  .section2 *********/
+.section2> div{
+    margin: 5px 0;/* 위우하좌 */
+    border: 1px solid gray;
+}
+.section2  ul{
+    overflow: hidden;
+}
+.section2  ul li{
+    float: left;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    width:24%;
+    margin-left: 0.8%;
+    line-height:  400px;
+    text-align: center;
+}
+/*******  footer ********/
+footer{
+    overflow: hidden;
+    margin: 0 auto;
+    width: 1000px;
+}
+footer div:nth-child(-n+3){
+    width: 33.3%;
+    height: 100px;
+    border: 1px solid gray;box-sizing: border-box;
+    float:left;
+}
+footer div:last-child{
+    clear: both;/*앞태그에서 전달받은 float(left,right)속을 clear */
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+
+/************************/

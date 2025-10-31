@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        /* 페이지 초기화*/
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        a{
+            text-decoration: none;color: black;display: block;
+            font-weight:bold;font-size: 1.1em;
+        }
+        /***************공통 부분****************/
+        #wrap{
+            border: 1px solid gray;
+            box-sizing: border-box;
+            text-align: justify;
+        }
+        #header{
+            height: 100px;line-height: 100px;text-align: center;
+            border: 1px solid gray;
+            box-sizing: border-box;
+        }
+        #nav ul{
+            overflow: hidden;
+        }
+        #nav ul li{
+            float: left;
+            line-height: 60px;
+            text-align: center;
+            border: 1px solid gray;
+            box-sizing: border-box;
+        }
+        /*****************min-device-width:,max-device-width:  대신 => min-width:,max-width:***************************/
+        /******************PC용(min-device-width:1201px)******************/
+        @media screen and (min-width:1201px){
+            #wrap{
+                width: 800px;margin: 3px auto;
+            }
+            #nav ul li{
+                width: 20%;
+            }
+        }
+
+        /***************테블릿용(min-device-width:900px,max-device-width:1200px)****************/
+        @media screen and (min-width:900px) and (max-width:1200px){
+            #wrap{
+                width: 99%;
+                background-color: rgb(50, 187, 50);
+                margin: 0.5%;
+                font-size: 1.2em;
+            }  
+            #nav ul li{
+                width: 25%;
+            } 
+            #nav ul li:nth-child(4){display: none;}
+        }
+        /***************스마트폰용(max-device-width:899px)****************/
+        @media screen and (max-width:899px){
+            #wrap{
+                width: 100%;
+                background-color: lightpink;
+                font-size: 1.5em;
+            } 
+            #nav ul li{
+                width: 33.3%;
+            } 
+            #nav ul li:nth-child(2n){display: none;}  
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"><h1>반응형웹</h1></div>
+        <div id="nav">
+            <ul>
+                <li><a href="">menu1</a></li>
+                <li><a href="">menu2</a></li>
+                <li><a href="">menu3</a></li>
+                <li><a href="">menu4</a></li>
+                <li><a href="">menu5</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h2>[핵잠 파일] 한화오션 필리조선소, 건조 능력 있나</h2><br>
+            <p>한미 정상회담 이후 핵추진 잠수함을 우리 손으로 건조할 길이 열릴 수 있다는 기대감이 커졌다. 이재명 대통령이 핵추진 잠수함 건조가 필요하다는 의견을 냈고 도널드 트럼프 대통령은 이를 "승인했다"고 밝히면서다. 다만 트럼프 대통령이 건조 거점으로 미국 '필리 조선소'를 특정한 대목은 현실 과제를 드러낸다.31일 업계에 따르면 트럼프 대통령은 SNS를 통해 "한국이 디젤 잠수함 대신 핵추진 잠수함(SSN)을 건조할 수 있도록 승인했다"고 밝혔다. 여론과 국군, 의회의 관심은 즉각 도입 척수와 시점으로 쏠렸다. 국방위원회 종합국감에서 강동길 해군참모총장은 '5000톤급 이상' '2030년대 중반 이후 도입' 가능이라고 밝혔고 안규백 국방부 장관은 '4척 이상' 이라며 대략적 청사진을 제시했다</p>
+        </div>
+        <div id="footer">홍길동 주식회사</div>
+    </div><!-- #wrap 끝-->
+</body>
+</html>

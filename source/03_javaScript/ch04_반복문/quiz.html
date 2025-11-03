@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        let cnt =0 ;    // 점수 입력횟수
+        let right = 0;  //제대로 된 숫자를 입력 횟수(0~100사이의 숫자)
+        let wrong = 0;  //제대로된 숫자를 입력하지 않은 횟수
+        let sum = 0;    //점수 누적 
+        // 반복문(조건 : confirm창에서 확인을 클릭)
+        while(true){
+            const id_comfirm = confirm("누적할래? (확인: 점수입력, 취소: 프로그램 종료)");
+            if(!id_comfirm){
+            alert("프로그램이 종료됩니다.");
+            break;
+            }
+            cnt++;
+            // 1. prompt를 통해 점수 입력 받기
+            const idx = prompt("0점에서 100점사이의 점수를 입력하세요.");
+            if (idx === null) {
+                    alert("점수 입력을 취소했습니다.");
+                    wrong++; 
+                    continue; 
+            }
+            // 2. 숫자로 형변환
+            const score = Number(idx);
+            // 3. 형변환된 숫자가 NaN여부 
+            if (isNaN(score) || score < 0 || score > 100) {
+                    // 3-1. NaN이면 wrong 변수 ++
+                    alert(`"${idx}"은(는) 잘못된 점수입니다. 0점에서 100점 사이의 숫자를 입력해주세요.`);
+                    wrong++;
+            } else {
+                    // 3-2. NaN아니면 right++ , sum에 입력한 숫자 누적
+                    right++;
+                    sum += score;
+                    alert(`점수 ${score}점이 누적되었습니다.`);
+            }
+        }
+        // 반복문 빠져 나온 후 cnt, sum, right,wrong 출력(document.write 이용)
+        document.write(`
+            <h1>점수 누적 결과</h1>
+            <p>총 입력 시도 횟수: <h4>${cnt}번</h4></p>
+            <p>누적 점수: <h4>${sum.toFixed(1)}점</h4></p>
+            <p>제대로 입력한 횟수: <h4>${right}번</h4></p>
+            <p>잘못 입력한 횟수: <h4>${wrong}번</h4></p>
+        `);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍길동 | 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset 및 기본 스타일 설정 */
+        :root {
+            --primary-color: #2c3e50; /* 짙은 남색 계열 (세련됨 강조) */
+            --secondary-color: #3498db; /* 밝은 파란색 (포인트 컬러) */
+            --bg-light: #f8f9fa; /* 밝은 배경색 */
+            --text-dark: #333333; /* 기본 텍스트 색상 */
+            --text-light: #777777; /* 밝은 텍스트 색상 (보조) */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* 부드러운 스크롤 이동 */
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9; /* 호버 시 조금 더 진하게 */
+        }
+
+        /* --- 헤더 (Header) 스타일 --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* 모바일 메뉴 아이콘 (햄버거 버튼 - 실제 기능은 JS 필요) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- 히어로 섹션 (Hero Section) 스타일 --- */
+        #hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://source.unsplash.com/random/1920x1080/?desk,laptop') no-repeat center center/cover; /* 배경 이미지 설정 (예시) */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: -70px; /* 헤더 높이만큼 올려서 겹치게 */
+            padding-top: 70px;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- 소개 섹션 (About Section) 스타일 --- */
+        #about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background-color: var(--bg-light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* --- 포트폴리오 섹션 (Portfolio Section) 스타일 --- */
+        #portfolio {
+            background-color: var(--bg-light);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-links a {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-right: 15px;
+        }
+        
+        .portfolio-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- 연락처 섹션 (Contact Section) 스타일 --- */
+        #contact {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .contact-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+        }
+
+        /* --- 푸터 (Footer) 스타일 --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* --- 반응형 미디어 쿼리 --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none; /* 모바일 메뉴 구현 시 변경 필요 (JS) */
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+
+            #hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-image img {
+                margin-bottom: 30px;
+            }
+            
+            .skills-list {
+                justify-content: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script> </head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">TAPER44</a> <div class="menu-toggle">
+                    <i class="fas fa-bars"></i> </div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>안녕하세요, <br> 웹 개발자 홍길동입니다.</h1>
+            <p>사용자 중심의 직관적이고 세련된 웹 경험을 만들어갑니다.</p>
+            <a href="#portfolio" class="btn">포트폴리오 보기</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>저에 대한 간략한 소개입니다.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://source.unsplash.com/random/400x400/?portrait" alt="프로필 사진"> </div>
+                <div class="about-text">
+                    <h3>끊임없이 배우고 성장하는 개발자</h3>
+                    <p>
+                        새로운 기술에 대한 호기심과 열정을 바탕으로, 사용자에게 가치 있는 웹 서비스를 제공하는 것을 목표로 합니다. 
+                        깔끔한 코드 작성과 효율적인 문제 해결 능력을 중요하게 생각하며, 팀원들과의 원활한 소통을 통해 시너지를 창출하는 것을 좋아합니다.
+                    </p>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                    <br>
+                    <a href="#" class="btn">이력서 다운로드</a> </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
+                <p>최근 작업한 주요 프로젝트입니다.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/400x300/?website,1" alt="프로젝트 1 이미지">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>프로젝트 이름 1</h3>
+                        <p>프로젝트에 대한 간략한 설명입니다. 어떤 문제를 해결했고, 어떤 기술을 사용했는지 핵심만 기술합니다.</p>
+                        <div class="portfolio-links">
+                            <a href="#" target="_blank">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/400x300/?website,2" alt="프로젝트 2 이미지">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>프로젝트 이름 2</h3>
+                        <p>반응형 웹 디자인을 적용하여 모바일에서도 최적화된 화면을 제공하는 쇼핑몰 사이트입니다.</p>
+                        <div class="portfolio-links">
+                            <a href="#" target="_blank">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/400x300/?website,3" alt="프로젝트 3 이미지">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>프로젝트 이름 3</h3>
+                        <p>React와 Node.js를 활용하여 개발한 실시간 채팅 애플리케이션입니다.</p>
+                        <div class="portfolio-links">
+                            <a href="#" target="_blank">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p>함께 일할 기회를 기다립니다. 언제든 편하게 연락주세요!</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>your.email@example.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Phone</h4>
+                    <p>010-1234-5678</p>
+                </div>
+                <div class="contact-item">
+                     <i class="fab fa-linkedin-in"></i> 
+                    <h4>LinkedIn</h4>
+                    <p><a href="#">linkedin.com/in/yourprofile</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hong Gil Dong. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            // 실제로는 navLinks에 'active' 클래스를 토글하는 방식으로 CSS를 제어해야 합니다.
+            // 이 예시에서는 간단하게 display 속성만 변경합니다.
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+            }
+        });
+    </script>
+
+</body>
+</html>

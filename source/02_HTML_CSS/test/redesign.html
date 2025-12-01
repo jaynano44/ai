@@ -285,85 +285,11 @@
             transition: transform 0.5s ease;
         }
 
-        .home_img:hover img {
-            transform: perspective(1000px) rotateY(0deg);
-        }
-
-        /* --- Profile Section (Resume) --- */
-        #profile {
-            background: var(--bg-card);
-        }
-
-        .about_wrap {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about_img {
-            position: relative;
-        }
-
-        .about_img img {
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .about_img::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--accent);
-            border-radius: var(--radius);
-            z-index: -1;
-        }
-
-        .about_txt h3 {
-            font-size: 2rem;
-            margin-bottom: 24px;
-        }
-
-        .about_txt p {
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            font-size: 1.1rem;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skill-tag {
-            padding: 8px 20px;
-            background: var(--bg-body);
-            border: 1px solid #e2e8f0;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-main);
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* --- Portfolio Section --- */
-        /* Filter Buttons */
-        .web-filters {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
         }
 
         .web-filters li a {
@@ -816,527 +742,492 @@
                 }
     </style>
 </head>
+</section>
 
-<body>
-
-    <div class="wrap">
-        <header>
-            <nav>
-                <a href="#" class="logo">TAPER<span>44</span></a>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="gnb">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#web">Web</a></li>
-                    <li><a href="#uiux">UI/UX</a></li>
-                    <li><a href="#ai">AI</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <section id="home" class="section">
-            <div class="container home_txt">
-                <div class="home_text">
-                    <h2>가치 있는 <br> <span>디지털 경험을 만듭니다.</span></h2>
-                    <p>안녕하세요, 웹 개발자 홍길동입니다. <br> 사용자 중심의 직관적이고 세련된 웹 경험을 디자인하고 구현합니다.</p>
-                    <a href="#web" class="btn">포트폴리오 보기 <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="home_img">
-                    <img src="http://taper44.dothome.co.kr/imges/gm.jpg" alt="Workspace">
-                </div>
+<section id="resume" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Resume</h2>
+            <p>지속적인 성장과 가치 창출을 위한 여정입니다.</p>
+        </div>
+        <div class="about_wrap">
+            <div class="about_img">
+                <img src="http://taper44.dothome.co.kr/imges/yangp.jpg" alt="Profile">
             </div>
-        </section>
+            <div class="about_txt">
+                <h3>홍길동 <span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">Web
+                        Developer</span></h3>
+                <p>
+                    새로운 기술에 대한 호기심과 열정을 바탕으로, 사용자에게 가치 있는 웹 서비스를 제공하는 것을 목표로 합니다.
+                    단순히 코드를 작성하는 것을 넘어, 비즈니스 문제를 해결하고 사용자 경험을 향상시키는 솔루션을 고민합니다.
+                </p>
 
-        <section id="resume" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Resume</h2>
-                    <p>지속적인 성장과 가치 창출을 위한 여정입니다.</p>
-                </div>
-                <div class="about_wrap">
-                    <div class="about_img">
-                        <img src="http://taper44.dothome.co.kr/imges/yangp.jpg" alt="Profile">
-                    </div>
-                    <div class="about_txt">
-                        <h3>홍길동 <span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">Web
-                                Developer</span></h3>
-                        <p>
-                            새로운 기술에 대한 호기심과 열정을 바탕으로, 사용자에게 가치 있는 웹 서비스를 제공하는 것을 목표로 합니다.
-                            단순히 코드를 작성하는 것을 넘어, 비즈니스 문제를 해결하고 사용자 경험을 향상시키는 솔루션을 고민합니다.
-                        </p>
-
-                        <div class="resume-section" style="margin-top: 30px;">
-                            <h4 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--primary);">Experience</h4>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <li
-                                    style="margin-bottom: 20px; border-left: 2px solid var(--accent); padding-left: 20px;">
-                                    <strong style="display: block; font-size: 1.1rem;">프론트엔드 개발자</strong>
-                                    <span style="color: var(--text-muted); font-size: 0.9rem;">2023.01 - 현재 | OO
-                                        컴퍼니</span>
-                                    <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text-muted);">웹 애플리케이션
-                                        UI 개발 및 유지보수, React 기반 컴포넌트 시스템 구축</p>
-                                </li>
-                                <li style="margin-bottom: 20px; border-left: 2px solid #e2e8f0; padding-left: 20px;">
-                                    <strong style="display: block; font-size: 1.1rem;">웹 퍼블리셔</strong>
-                                    <span style="color: var(--text-muted); font-size: 0.9rem;">2021.03 - 2022.12 | XX
-                                        에이전시</span>
-                                    <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text-muted);">다수의 기업 및
-                                        프로모션 사이트 퍼블리싱, 반응형 웹 구현</p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="resume-section" style="margin-top: 30px;">
-                            <h4 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--primary);">Skills</h4>
-                            <div class="skills">
-                                <span class="skill-tag">HTML5</span>
-                                <span class="skill-tag">CSS3 (Sass)</span>
-                                <span class="skill-tag">JavaScript (ES6+)</span>
-                                <span class="skill-tag">React.js</span>
-                                <span class="skill-tag">Next.js</span>
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Git & GitHub</span>
-                                <span class="skill-tag">Figma</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="web" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Web Projects</h2>
-                    <p>다양한 환경과 기술을 활용한 프로젝트 포트폴리오입니다.</p>
+                <div class="resume-section" style="margin-top: 30px;">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--primary);">Experience</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 20px; border-left: 2px solid var(--accent); padding-left: 20px;">
+                            <strong style="display: block; font-size: 1.1rem;">프론트엔드 개발자</strong>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">2023.01 - 현재 | OO
+                                컴퍼니</span>
+                            <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text-muted);">웹 애플리케이션
+                                UI 개발 및 유지보수, React 기반 컴포넌트 시스템 구축</p>
+                        </li>
+                        <li style="margin-bottom: 20px; border-left: 2px solid #e2e8f0; padding-left: 20px;">
+                            <strong style="display: block; font-size: 1.1rem;">웹 퍼블리셔</strong>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">2021.03 - 2022.12 | XX
+                                에이전시</span>
+                            <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text-muted);">다수의 기업 및
+                                프로모션 사이트 퍼블리싱, 반응형 웹 구현</p>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Filter Buttons -->
-                <ul class="web-filters">
-                    <li class="active"><a href="#" data-filter="all">All</a></li>
-                    <li><a href="#" data-filter="web-pc">PC버전</a></li>
-                    <li><a href="#" data-filter="web-responsive">반응형</a></li>
-                    <li><a href="#" data-filter="web-react">React</a></li>
-                </ul>
-
-                <div class="portfolio_list">
-                    <!-- PC Version Project 1 -->
-                    <div class="portfolio_item" data-category="web-pc">
-                        <div class="pf_img">
-                            <img src="http://taper44.dothome.co.kr/imges/Mondrial-AI.jpg" alt="PC Version Project">
-                        </div>
-                        <div class="pf_txt">
-                            <h3>Mondrian AI (PC)</h3>
-                            <p>데스크탑 환경에 최적화된 웹 사이트입니다.</p>
-                            <div class="pf_links">
-                                <button class="btn-sm view-project-btn" data-title="Mondrian AI (PC)"
-                                    data-desc="데스크탑 환경에 최적화된 웹 사이트입니다. 넓은 화면을 활용한 레이아웃과 섬세한 인터랙션을 구현했습니다."
-                                    data-tech="HTML5, CSS3, jQuery" data-detail="이 프로젝트는 기업의 아이덴티티를 강조하기 위해..."
-                                    data-link="http://taper44.dothome.co.kr/web/Mondrial%20AI_pc/index.html">
-                                    View Details <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
+                <div class="resume-section" style="margin-top: 30px;">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--primary);">Skills</h4>
+                    <div class="skills">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3 (Sass)</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Figma</span>
                     </div>
-
-                    <!-- Responsive Project 1 -->
-                    <div class="portfolio_item" data-category="web-responsive">
-                        <div class="pf_img">
-                            <img src="http://taper44.dothome.co.kr/imges/busantravelmap.jpg" alt="Responsive Project">
-                        </div>
-                        <div class="pf_txt">
-                            <h3>부산 관광지도 (반응형)</h3>
-                            <p>모바일, 태블릿, 데스크탑 등 모든 기기에서 완벽하게 동작합니다.</p>
-                            <div class="pf_links">
-                                <button class="btn-sm view-project-btn" data-title="부산 관광지도 (반응형)"
-                                    data-desc="모바일, 태블릿, 데스크탑 등 모든 기기에서 완벽하게 동작하는 반응형 웹 사이트입니다."
-                                    data-tech="HTML5, CSS3, Media Queries" data-detail="부산의 주요 관광지를 소개하는 반응형 웹사이트입니다..."
-                                    data-link="http://taper44.dothome.co.kr/web/pusanTravel_resp/index.html">
-                                    View Details <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- React Project 1 -->
-                    <div class="portfolio_item" data-category="web-react">
-                        <div class="pf_img">
-                            <img src="http://taper44.dothome.co.kr/imges/sul.jpg" alt="React Project">
-                        </div>
-                        <div class="pf_txt">
-                            <h3>설화수 (React)</h3>
-                            <p>React 라이브러리를 활용한 SPA입니다.</p>
-                            <div class="pf_links">
-                                <button class="btn-sm view-project-btn" data-title="설화수 (React)"
-                                    data-desc="React 라이브러리를 활용한 SPA입니다. 컴포넌트 기반 아키텍처로 재사용성을 높였습니다."
-                                    data-tech="React, Styled-components" data-detail="React의 상태 관리와 라우팅을 활용하여..."
-                                    data-link="https://taper4444.github.io/">
-                                    View Details <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- UI/UX Section -->
-        <section id="uiux" class="section" style="background-color: #f1f5f9;">
-            <div class="container">
-                <div class="section-title">
-                    <h2>UI/UX Design</h2>
-                    <p>사용자 경험을 최우선으로 고려한 디자인 프로세스와 결과물입니다.</p>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                    <!-- UI/UX Item 1 -->
-                    <div
-                        style="background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);">
-                        <div
-                            style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
-                            <i class="fas fa-pen-nib" style="font-size: 3rem;"></i>
-                        </div>
-                        <div style="padding: 24px;">
-                            <h3 style="font-size: 1.25rem; margin-bottom: 10px;">App Design Renewal</h3>
-                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">기존 앱의 사용성을
-                                개선하고 비주얼 아이덴티티를 재정립한 리뉴얼 프로젝트입니다.</p>
-                            <a href="#" style="color: var(--accent); font-weight: 600;">View Case Study <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- UI/UX Item 2 -->
-                    <div
-                        style="background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);">
-                        <div
-                            style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
-                            <i class="fas fa-layer-group" style="font-size: 3rem;"></i>
-                        </div>
-                        <div style="padding: 24px;">
-                            <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Service Flow Planning</h3>
-                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">복잡한 서비스 로직을
-                                단순화하고 사용자 친화적인 흐름으로 개선한 기획서입니다.</p>
-                            <a href="#" style="color: var(--accent); font-weight: 600;">View Case Study <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Section -->
-        <section id="ai" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>AI Projects</h2>
-                    <p>인공지능 기술을 활용한 실험적이고 창의적인 프로젝트입니다.</p>
-                </div>
-                <div
-                    style="text-align: center; padding: 80px 20px; background: var(--primary); border-radius: 24px; color: white; position: relative; overflow: hidden;">
-                    <div style="position: relative; z-index: 1;">
-                        <i class="fas fa-robot" style="font-size: 4rem; margin-bottom: 24px; color: var(--accent);"></i>
-                        <h3 style="font-size: 2rem; margin-bottom: 16px;">AI-Powered Solutions</h3>
-                        <p style="font-size: 1.1rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px;">
-                            LLM, 이미지 생성 모델 등 최신 AI 기술을 웹 서비스에 접목하는 다양한 시도를 하고 있습니다.
-                            <br>더 많은 프로젝트를 준비 중입니다.
-                        </p>
-                        <a href="#" class="btn" style="background: white; color: var(--primary);">Explore AI Lab <i
-                                class="fas fa-flask"></i></a>
-                    </div>
-                    <!-- Background Effect -->
-                    <div
-                        style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%); animation: rotate 20s linear infinite;">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container contact_wrap">
-                <div class="section-title contact-title">
-                    <h2>함께 일해봅시다</h2>
-                    <p>새로운 프로젝트나 협업 제안은 언제나 환영합니다.</p>
-                </div>
-                <div class="contact_info">
-                    <div class="contact_item">
-                        <i class="fas fa-envelope"></i>
-                        <h4>이메일</h4>
-                        <p>taper44@dothome.co.kr</p>
-                    </div>
-                    <div class="contact_item">
-                        <i class="fas fa-phone-alt"></i>
-                        <h4>전화번호</h4>
-                        <p>010-1234-5678</p>
-                    </div>
-                    <div class="contact_item">
-                        <i class="fab fa-linkedin-in"></i>
-                        <h4>링크드인</h4>
-                        <p>@honggildong</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <div class="container">
-                <p>&copy; 2024 Hong Gil Dong. All rights reserved. Designed & Built with ❤️.</p>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Project Detail Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2 id="modalTitle">Project Title</h2>
-                <span id="modalTech" class="modal-tech">HTML / CSS</span>
-            </div>
-            <div class="modal-body">
-                <p id="modalDesc" class="modal-desc">Project Description</p>
-                <div class="modal-detail-content">
-                    <h4>상세 설명</h4>
-                    <p id="modalDetail">Detailed explanation goes here...</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" id="modalLink" target="_blank" class="btn">Live Site <i
-                            class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <style>
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+<section id="web" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Web Projects</h2>
+            <p>다양한 환경과 기술을 활용한 프로젝트 포트폴리오입니다.</p>
+        </div>
 
-        .modal.show {
-            display: flex;
-            opacity: 1;
-            align-items: center;
-            justify-content: center;
-        }
+        <!-- Filter Buttons -->
+        <ul class="web-filters">
+            <li class="active"><a href="#" data-filter="all">All</a></li>
+            <li><a href="#" data-filter="web-pc">PC버전</a></li>
+            <li><a href="#" data-filter="web-responsive">반응형</a></li>
+            <li><a href="#" data-filter="web-react">React</a></li>
+        </ul>
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 0;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 700px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            position: relative;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-            overflow: hidden;
-        }
+        <div class="portfolio_list">
+            <!-- PC Version Project 1 -->
+            <div class="portfolio_item" data-category="web-pc">
+                <div class="pf_img">
+                    <img src="http://taper44.dothome.co.kr/imges/Mondrial-AI.jpg" alt="PC Version Project">
+                </div>
+                <div class="pf_txt">
+                    <h3>Mondrian AI (PC)</h3>
+                    <p>데스크탑 환경에 최적화된 웹 사이트입니다.</p>
+                    <div class="pf_links">
+                        <button class="btn-sm view-project-btn" data-title="Mondrian AI (PC)"
+                            data-desc="데스크탑 환경에 최적화된 웹 사이트입니다. 넓은 화면을 활용한 레이아웃과 섬세한 인터랙션을 구현했습니다."
+                            data-tech="HTML5, CSS3, jQuery" data-detail="이 프로젝트는 기업의 아이덴티티를 강조하기 위해..."
+                            data-link="http://taper44.dothome.co.kr/web/Mondrial%20AI_pc/index.html">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        .modal.show .modal-content {
-            transform: translateY(0);
-        }
+            <!-- Responsive Project 1 -->
+            <div class="portfolio_item" data-category="web-responsive">
+                <div class="pf_img">
+                    <img src="http://taper44.dothome.co.kr/imges/busantravelmap.jpg" alt="Responsive Project">
+                </div>
+                <div class="pf_txt">
+                    <h3>부산 관광지도 (반응형)</h3>
+                    <p>모바일, 태블릿, 데스크탑 등 모든 기기에서 완벽하게 동작합니다.</p>
+                    <div class="pf_links">
+                        <button class="btn-sm view-project-btn" data-title="부산 관광지도 (반응형)"
+                            data-desc="모바일, 태블릿, 데스크탑 등 모든 기기에서 완벽하게 동작하는 반응형 웹 사이트입니다."
+                            data-tech="HTML5, CSS3, Media Queries" data-detail="부산의 주요 관광지를 소개하는 반응형 웹사이트입니다..."
+                            data-link="http://taper44.dothome.co.kr/web/pusanTravel_resp/index.html">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        .close-modal {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            cursor: pointer;
-            z-index: 10;
-            transition: color 0.2s;
-        }
+            <!-- React Project 1 -->
+            <div class="portfolio_item" data-category="web-react">
+                <div class="pf_img">
+                    <img src="http://taper44.dothome.co.kr/imges/sul.jpg" alt="React Project">
+                </div>
+                <div class="pf_txt">
+                    <h3>설화수 (React)</h3>
+                    <p>React 라이브러리를 활용한 SPA입니다.</p>
+                    <div class="pf_links">
+                        <button class="btn-sm view-project-btn" data-title="설화수 (React)"
+                            data-desc="React 라이브러리를 활용한 SPA입니다. 컴포넌트 기반 아키텍처로 재사용성을 높였습니다."
+                            data-tech="React, Styled-components" data-detail="React의 상태 관리와 라우팅을 활용하여..."
+                            data-link="https://taper4444.github.io/">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        .close-modal:hover,
-        .close-modal:focus {
-            color: var(--primary);
-            text-decoration: none;
-            cursor: pointer;
-        }
+<!-- UI/UX Section -->
+<section id="uiux" class="section" style="background-color: #f1f5f9;">
+    <div class="container">
+        <div class="section-title">
+            <h2>UI/UX Design</h2>
+            <p>사용자 경험을 최우선으로 고려한 디자인 프로세스와 결과물입니다.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- UI/UX Item 1 -->
+            <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);">
+                <div
+                    style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                    <i class="fas fa-pen-nib" style="font-size: 3rem;"></i>
+                </div>
+                <div style="padding: 24px;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 10px;">App Design Renewal</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">기존 앱의 사용성을
+                        개선하고 비주얼 아이덴티티를 재정립한 리뉴얼 프로젝트입니다.</p>
+                    <a href="#" style="color: var(--accent); font-weight: 600;">View Case Study <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- UI/UX Item 2 -->
+            <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);">
+                <div
+                    style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                    <i class="fas fa-layer-group" style="font-size: 3rem;"></i>
+                </div>
+                <div style="padding: 24px;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Service Flow Planning</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">복잡한 서비스 로직을
+                        단순화하고 사용자 친화적인 흐름으로 개선한 기획서입니다.</p>
+                    <a href="#" style="color: var(--accent); font-weight: 600;">View Case Study <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        .modal-header {
-            padding: 30px 30px 20px;
-            border-bottom: 1px solid #e2e8f0;
-        }
+<!-- AI Section -->
+<section id="ai" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>AI Projects</h2>
+            <p>인공지능 기술을 활용한 실험적이고 창의적인 프로젝트입니다.</p>
+        </div>
+        <div
+            style="text-align: center; padding: 80px 20px; background: var(--primary); border-radius: 24px; color: white; position: relative; overflow: hidden;">
+            <div style="position: relative; z-index: 1;">
+                <i class="fas fa-robot" style="font-size: 4rem; margin-bottom: 24px; color: var(--accent);"></i>
+                <h3 style="font-size: 2rem; margin-bottom: 16px;">AI-Powered Solutions</h3>
+                <p style="font-size: 1.1rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px;">
+                    LLM, 이미지 생성 모델 등 최신 AI 기술을 웹 서비스에 접목하는 다양한 시도를 하고 있습니다.
+                    <br>더 많은 프로젝트를 준비 중입니다.
+                </p>
+                <a href="#" class="btn" style="background: white; color: var(--primary);">Explore AI Lab <i
+                        class="fas fa-flask"></i></a>
+            </div>
+            <!-- Background Effect -->
+            <div
+                style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%); animation: rotate 20s linear infinite;">
+            </div>
+        </div>
+    </div>
+</section>
 
-        .modal-header h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
+<section id="contact" class="section">
+    <div class="container contact_wrap">
+        <div class="section-title contact-title">
+            <h2>함께 일해봅시다</h2>
+            <p>새로운 프로젝트나 협업 제안은 언제나 환영합니다.</p>
+        </div>
+        <div class="contact_info">
+            <div class="contact_item">
+                <i class="fas fa-envelope"></i>
+                <h4>이메일</h4>
+                <p>taper44@dothome.co.kr</p>
+            </div>
+            <div class="contact_item">
+                <i class="fas fa-phone-alt"></i>
+                <h4>전화번호</h4>
+                <p>010-1234-5678</p>
+            </div>
+            <div class="contact_item">
+                <i class="fab fa-linkedin-in"></i>
+                <h4>링크드인</h4>
+                <p>@honggildong</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        .modal-tech {
-            display: inline-block;
-            background: #f1f5f9;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Hong Gil Dong. All rights reserved. Designed & Built with ❤️.</p>
+    </div>
+</footer>
+</div>
 
-        .modal-body {
-            padding: 30px;
-        }
+<!-- Project Detail Modal -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+            <h2 id="modalTitle">Project Title</h2>
+            <span id="modalTech" class="modal-tech">HTML / CSS</span>
+        </div>
+        <div class="modal-body">
+            <p id="modalDesc" class="modal-desc">Project Description</p>
+            <div class="modal-detail-content">
+                <h4>상세 설명</h4>
+                <p id="modalDetail">Detailed explanation goes here...</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="modalLink" target="_blank" class="btn">Live Site <i
+                        class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-        .modal-desc {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+<style>
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
 
-        .modal-detail-content {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-        }
+    .modal.show {
+        display: flex;
+        opacity: 1;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .modal-detail-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border-radius: 16px;
+        width: 90%;
+        max-width: 700px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        position: relative;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
 
-        .modal-detail-content p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            white-space: pre-line;
-        }
+    .modal.show .modal-content {
+        transform: translateY(0);
+    }
 
-        .btn-sm {
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-            background: var(--accent);
-            color: white;
-            border-radius: 20px;
-            transition: background 0.3s;
-        }
+    .close-modal {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        cursor: pointer;
+        z-index: 10;
+        transition: color 0.2s;
+    }
 
-        .btn-sm:hover {
-            background: var(--primary);
-        }
-    </style>
+    .close-modal:hover,
+    .close-modal:focus {
+        color: var(--primary);
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-    <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.gnb');
+    .modal-header {
+        padding: 30px 30px 20px;
+        border-bottom: 1px solid #e2e8f0;
+    }
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    .modal-header h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+    }
+
+    .modal-tech {
+        display: inline-block;
+        background: #f1f5f9;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-weight: 600;
+    }
+
+    .modal-body {
+        padding: 30px;
+    }
+
+    .modal-desc {
+        font-size: 1.1rem;
+        color: var(--text-main);
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .modal-detail-content {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
+
+    .modal-detail-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+    }
+
+    .modal-detail-content p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        white-space: pre-line;
+    }
+
+    .btn-sm {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border: none;
+        cursor: pointer;
+        background: var(--accent);
+        color: white;
+        border-radius: 20px;
+        transition: background 0.3s;
+    }
+
+    .btn-sm:hover {
+        background: var(--primary);
+    }
+</style>
+
+<script>
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.gnb');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            navLinks.classList.remove('active');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Isotope Filter
+    window.addEventListener('load', () => {
+        const elem = document.querySelector('.portfolio_list');
+        const iso = new Isotope(elem, {
+            itemSelector: '.portfolio_item',
+            layoutMode: 'fitRows',
+            percentPosition: true
         });
 
-        // Smooth Scroll for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+        const filterButtons = document.querySelectorAll('.web-filters a');
 
-                navLinks.classList.remove('active');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                filterButtons.forEach(b => b.parentElement.classList.remove('active'));
+                e.target.parentElement.classList.add('active');
+                const filterValue = e.target.getAttribute('data-filter');
+                if (filterValue === 'all') {
+                    iso.arrange({ filter: '*' });
+                } else {
+                    iso.arrange({ filter: `[data-category="${filterValue}"]` });
                 }
             });
         });
+    });
 
-        // Isotope Filter
-        window.addEventListener('load', () => {
-            const elem = document.querySelector('.portfolio_list');
-            const iso = new Isotope(elem, {
-                itemSelector: '.portfolio_item',
-                layoutMode: 'fitRows',
-                percentPosition: true
-            });
+    // Modal Logic
+    const modal = document.getElementById("projectModal");
+    const closeModal = document.querySelector(".close-modal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalTech = document.getElementById("modalTech");
+    const modalDetail = document.getElementById("modalDetail");
+    const modalLink = document.getElementById("modalLink");
 
-            const filterButtons = document.querySelectorAll('.web-filters a');
+    // Open Modal
+    document.querySelectorAll('.view-project-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default if it's inside an anchor
+            const title = btn.getAttribute('data-title');
+            const desc = btn.getAttribute('data-desc');
+            const tech = btn.getAttribute('data-tech');
+            const detail = btn.getAttribute('data-detail');
+            const link = btn.getAttribute('data-link');
 
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    filterButtons.forEach(b => b.parentElement.classList.remove('active'));
-                    e.target.parentElement.classList.add('active');
-                    const filterValue = e.target.getAttribute('data-filter');
-                    if (filterValue === 'all') {
-                        iso.arrange({ filter: '*' });
-                    } else {
-                        iso.arrange({ filter: `[data-category="${filterValue}"]` });
-                    }
-                });
-            });
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalTech.textContent = tech;
+            modalDetail.textContent = detail;
+            modalLink.href = link;
+
+            modal.style.display = "flex";
+            setTimeout(() => {
+                modal.classList.add("show");
+            }, 10);
         });
+    });
 
-        // Modal Logic
-        const modal = document.getElementById("projectModal");
-        const closeModal = document.querySelector(".close-modal");
-        const modalTitle = document.getElementById("modalTitle");
-        const modalDesc = document.getElementById("modalDesc");
-        const modalTech = document.getElementById("modalTech");
-        const modalDetail = document.getElementById("modalDetail");
-        const modalLink = document.getElementById("modalLink");
+    // Close Modal
+    closeModal.addEventListener('click', () => {
+        modal.classList.remove("show");
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300);
+    });
 
-        // Open Modal
-        document.querySelectorAll('.view-project-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent default if it's inside an anchor
-                const title = btn.getAttribute('data-title');
-                const desc = btn.getAttribute('data-desc');
-                const tech = btn.getAttribute('data-tech');
-                const detail = btn.getAttribute('data-detail');
-                const link = btn.getAttribute('data-link');
-
-                modalTitle.textContent = title;
-                modalDesc.textContent = desc;
-                modalTech.textContent = tech;
-                modalDetail.textContent = detail;
-                modalLink.href = link;
-
-                modal.style.display = "flex";
-                setTimeout(() => {
-                    modal.classList.add("show");
-                }, 10);
-            });
-        });
-
-        // Close Modal
-        closeModal.addEventListener('click', () => {
+    window.addEventListener('click', (e) => {
+        if (e.target == modal) {
             modal.classList.remove("show");
             setTimeout(() => {
                 modal.style.display = "none";
             }, 300);
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target == modal) {
-                modal.classList.remove("show");
-                setTimeout(() => {
-                    modal.style.display = "none";
-                }, 300);
-            }
-        });
-    </script>
+        }
+    });
+</script>
 </body>
 
 </html>

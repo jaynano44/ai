@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 (
                     "title",
                     models.CharField(
-                        help_text="기사제목입니다. 100자 이내로 입력하세요",
+                        help_text="기사 제목입니다. 100자 내외로 입력하세요",
                         max_length=100,
                         verbose_name="제목",
                     ),

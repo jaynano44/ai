@@ -15,8 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
+from django.urls import path, include
+from django.shortcuts import redirect
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", lambda request : redirect("file:upload_file")),
+    path("blog/", include("blog.urls")),
+    path("book/", include("book.urls")),
+    path("article/", include("article.urls")),
+    path("file/", include("filetest.urls")),
+    path("accounts/", include("accounts.urls")),
 ]
+# 장고는 static은 자동연결. media는 개발자가 url과 root경로를 연결
+from django.conf.urls.static import static
+from . import settings
+urlpatterns += static(settings.MEDIA_URL,   # /media
+                    document_root=settings.MEDIA_ROOT)  # BASE_DIR/_media저장
